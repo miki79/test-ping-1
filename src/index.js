@@ -1,10 +1,11 @@
 const request = require('request');
 const { getResults } = require('./lib.js');
 
-const data = getResults();
-var options = { method: 'POST', url: 'https://enudlh7uqfu5.x.pipedream.net/', body: data, json: true };
+getResults().then(data => {
+  var options = { method: 'POST', url: 'https://enudlh7uqfu5.x.pipedream.net/', body: data, json: true };
 
-request(options, (error, response, body) => {
-  if (error) throw new Error(error);
-  console.log(body);
+  request(options, (error, response, body) => {
+    if (error) throw new Error(error);
+    console.log(body);
+  });
 });

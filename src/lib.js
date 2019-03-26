@@ -48,7 +48,7 @@ const checkPing = data => {
   return Promise.all(promises);
 };
 
-const getResults = () => {
+const getResults = async () => {
   const data = getConfig();
   return {
     ping: checkPing(data.ping),
