@@ -51,7 +51,7 @@ const checkPing = data => {
 const getResults = async () => {
   const data = getConfig();
   return {
-    ping: checkPing(data.ping),
+    ping: await checkPing(data.ping),
     //speed: await checkSpeed(data.speed),
   };
 };
